@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+  <title>Trip Planner Application</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .btn{
+      background-color: #410DAA !important;
+      color:white !important;
+      width:150px;
+    }
+    .card{
+        flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+    min-height: 1px;
+    padding: 1.25rem;
+    }
+    a{
+        color:#410DAA !important;
+        text-decoration:none !important;
+    }
+  </style>
+</head>
+<body>
+<div style="margin: 70px; border: 2px solid black; padding: 10px;">
+<div class="container">
+<div style="text-align: center;width: 1150px; height: 250px;background-color: lightblue">
+  <h2><br><br><br>User Dashboard</h2>
+ </div>
+  <br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="/show/user/profile/">
+                        <div class="card-body text-center">
+                            <h4>View Profile</h4>
+                            <br>
+                            <p style="color:gray;">
+                                User can update his / her details using this screen.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="/add/trip/">
+                        <div class="card-body text-center">
+                          <h4> Add Trip</h4>
+                            <br>
+                            <p style="color:gray;">
+                                You can add your new trip details.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="/show/trips/">
+                        <div class="card-body text-center">
+                           <h4>Show Trips</h4>
+                            <br>
+                            <p style="color:gray">
+                                Showing existing trips of user.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+      </div>
+
+</div>
+</div>
+</div>
+<footer>
+	<p>&copy; 2023 Trip Planner Application </p>
+</footer>
+
+
+</body>
+</html>

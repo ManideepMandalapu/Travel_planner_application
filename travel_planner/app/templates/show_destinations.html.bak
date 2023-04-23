@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+  <title>Trip Planner Application</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .btn{
+      background-color: #410DAA !important;
+      color:white !important;
+      width:150px;
+    }
+    a{
+        color:#410DAA !important;
+        text-decoration:none !important;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Trip {{trip.name}} Destinations</h2>
+  <br><br>
+    <div class="container">
+        {% if destinations %}
+        <div class="row">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Trip Number</th>
+                <th>Trip Name</th>
+                <th>Trip State Date</th>
+                <th>Trip End Date</th>
+                <th>Destination Name</th>
+                <th>Destination Notes</th>
+                <th>Destination Created</th>
+                <th>Activities</th>
+                <th style="text-align:center;">#</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for d in destinations %}
+            <tr>
+                <td>{{trip.pk}}</td>
+                <td>{{trip.name}}</td>
+                <td>{{trip.start_date}}</td>
+                <td>{{trip.end_date}}</td>
+                <td>{{d.name}}</td>
+                <td>{{d.notes}}</td>
+                <td>{{d.created}}</td>
+
+                    <td>
+                    <a class="" href="/add/activity/{{d.pk}}/">
+                         Add Activity
+                    </a>
+                    <br><br>
+                    <a class="" href="/show/activities/{{d.pk}}/">
+                         Show Activities
+                    </a>
+
+                </td>
+
+                <td>
+                    <a class="" href="/update/destination/details/{{trip.pk}}/{{d.pk}}/">
+                         Update Destination
+                    </a>
+                    <br><br>
+                    <a class="" href="/delete/destination/details/{{d.pk}}/">
+                         Delete Destination
+                    </a>
+
+                </td>
+
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+            <br>
+            <a class="btn" href="{% url 'home_page' %}">
+                Take me Back
+            </a>
+      </div>
+        {% else %}
+            <center>
+                <p>
+                    No Trip destinations found for this account.
+                </p>
+                <a class="btn" href="/add/destination/{{trip.pk}}/">
+               Add New Destination
+            </a>
+      </div>
+            </center>
+        {% endif %}
+
+</div>
+</div>
+
+</body>
+</html>

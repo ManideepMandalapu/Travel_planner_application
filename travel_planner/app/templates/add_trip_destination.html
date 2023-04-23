@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+  <title>Trip Planner Application</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .btn{
+      background-color: #410DAA !important;
+      color:white !important;
+      width:250px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Add Trip Destinations</h2>
+  <br><br>
+  <form method="POST">
+    {{form|crispy}}
+    {% csrf_token %}
+    <br>
+    <button class="btn " type="submit">
+      {% if destination_id %}
+        Update Trip Destination Details
+      {% else %}
+      Add New Destination
+      {% endif %}
+    </button>
+  </form>
+</div>
+
+<footer>
+	<p>&copy; 2023 Trip Planner Application </p>
+</footer>
+
+</body>
+</html>

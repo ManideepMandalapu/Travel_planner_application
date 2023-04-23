@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+  <title>Trip Planner Application</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .btn{
+      background-color: #410DAA !important;
+      color:white !important;
+      width:150px;
+    }
+    a{
+        color:#410DAA !important;
+        text-decoration:none !important;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Trip Destination Activities</h2>
+  <br><br>
+    <div class="container">
+        {% if activites %}
+        <div class="row">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Trip Name</th>
+                <th>Destination</th>
+                <th>Activity Date</th>
+                <th>Activity Time</th>
+                <th>Activity Notes</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for a in activites %}
+            <tr>
+                <td>{{a.destination.trips.name}}</td>
+                <td>{{a.destination.name}}</td>
+                <td>{{a.date}}</td>
+                <td>{{a.time}}</td>
+                <td>{{a.notes}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+            <br>
+            <a class="btn" href="{% url 'home_page' %}">
+                Take me Back
+            </a>
+      </div>
+        {% else %}
+            <center>
+                <p>
+                    No Trip destination activites found for this account.
+                </p>
+                <a class="btn" href="/show/trips/">
+               Show Trips
+            </a>
+      </div>
+            </center>
+        {% endif %}
+
+</div>
+</div>
+
+</body>
+</html>

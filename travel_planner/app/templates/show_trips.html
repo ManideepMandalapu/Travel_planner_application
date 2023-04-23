@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+  <title>Trip Planner Application</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .btn{
+      background-color: #410DAA !important;
+      color:white !important;
+      width:150px;
+    }
+    a{
+        color:#410DAA !important;
+        text-decoration:none !important;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Show Trip Details</h2>
+  <br><br>
+    <div class="container">
+        {% if trips %}
+        <div class="row">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Trip Number</th>
+                <th>Trip Name</th>
+                <th>Trip State Date</th>
+                <th>Trip End Date</th>
+                <th>Created</th>
+                <th>Destinations</th>
+                <th style="text-align:center;">#</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for p in trips %}
+            <tr>
+                <td>{{p.pk}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.start_date}}</td>
+                <td>{{p.end_date}}</td>
+                <td>{{p.created}}</td>
+                <td>
+                    <a class="" href="/add/destination/{{p.pk}}">
+                         Add Destinations
+                    </a>
+                    <br><br>
+                    <a class="" href="/show/destinations/{{p.pk}}">
+                         Show Destinations
+                    </a>
+
+                </td>
+                <td style="text-align:center;">
+                    <a class="" href="/update/trip/details/{{p.pk}}">
+                        Update Trip Details
+                    </a>
+                    <br><br>
+                    <a class="" href="/delete/trip/details/{{p.pk}}">
+                         Delete Trip Details
+                    </a>
+
+
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+            <br>
+            <a class="btn" href="{% url 'home_page' %}">
+                Take me Back
+            </a>
+      </div>
+        {% else %}
+            <center>
+                <p>
+                    No Trips found for this account.
+                </p>
+                <a class="btn" href="{% url 'add_trip' %}">
+               Add New Trip
+            </a>
+      </div>
+            </center>
+        {% endif %}
+
+</div>
+</div>
+
+<footer>
+	<p>&copy; 2023 Trip Planner Application </p>
+</footer>
+
+</body>
+</html>

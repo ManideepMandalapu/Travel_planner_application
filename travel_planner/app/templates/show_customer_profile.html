@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+  <title>Trip Planner Application</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .btn{
+      background-color: #410DAA !important;
+      color:white !important;
+      width:150px;
+    }
+    a{
+        color:#410DAA !important;
+        text-decoration:none !important;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>User Profile Details</h2>
+  <br><br>
+    <div class="container">
+        <div class="row">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>User No</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Mobile Number</th>
+                <th>#</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{request.user.pk}}</td>
+                <td>{{request.user.first_name}}</td>
+                <td>{{request.user.last_name}}</td>
+                <td>{{request.user.email}}</td>
+                <td>{{request.user.phone_number}}</td>
+                <td>
+                    <a class="" href="/update/user/profile/{{request.user.pk}}">
+                        Update Details
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+            <br>
+            <a class="btn" href="{% url 'home_page' %}">
+                Take me Back
+            </a>
+      </div>
+
+</div>
+</div>
+
+<footer>
+	<p>&copy; 2023 Trip Planner Application </p>
+</footer>
+
+</body>
+</html>
