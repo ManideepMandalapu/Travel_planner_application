@@ -61,3 +61,19 @@ UPDATE activities SET destination_id = 5 WHERE activity_id = 1;
 select * from activities;
 
 DELETE from activities WHERE activity_id = 1;
+
+
+
+
+
+
+INSERT INTO activities (activity_id, destination_id,name,date, notes, created) 
+VALUES (3,7,'Visit ', '2023-03-10', '19:30:00', 'Book motels.', '2023-10-3 16:20:00');
+
+UPDATE activities SET name = 'Order food online' WHERE activity_id = 3;
+
+UPDATE activities SET destination_id = 7 WHERE activity_id = 3;
+
+select * from activities;
+
+DELETE from activities WHERE activity_id = 3;
