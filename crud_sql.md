@@ -11,7 +11,7 @@ UPDATE useraccount SET password = 'password1234' WHERE user_account_id = 1;
 
 DELETE FROM useraccount WHERE  user_account_id= 1;
 
-
+======================================================================================================================================================================
 
 
 
@@ -31,6 +31,7 @@ UPDATE Trips SET name = 'New Trip Name', start_date = '2023-07-01' WHERE trip_id
 DELETE FROM Trips WHERE start_date > '2023-05-01';
 
 
+===================================================================================================================================================================
 
 
 
@@ -47,7 +48,7 @@ UPDATE destination SET city = 'New York' WHERE destination_id = 3;
 DELETE FROM destination WHERE destination_id = 3;
 
 
-
+====================================================================================================================================================================
 
 
 
@@ -65,15 +66,3 @@ DELETE from activities WHERE activity_id = 1;
 
 
 
-
-
-INSERT INTO activities (activity_id, destination_id,name,date, notes, created) 
-VALUES (3,7,'Visit ', '2023-03-10', '19:30:00', 'Book motels.', '2023-10-3 16:20:00');
-
-UPDATE activities SET name = 'Order food online' WHERE activity_id = 3;
-
-UPDATE activities SET destination_id = 7 WHERE activity_id = 3;
-
-select * from activities;
-
-DELETE from activities WHERE activity_id = 3;
