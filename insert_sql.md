@@ -72,3 +72,19 @@ VALUES (5, 5,'04/20/2023', 'reserve a motel', '07/04/2023 22:15:00');
 
 
 
+
+
+INSERT INTO useraccount (user_account_id,first_name, last_name,email, phone_number, created) 
+VALUES (6, 'hrithik', 'jogu', 'hrithik@gmail.com',	00009992,	'05/08/2023');
+
+INSERT INTO useraccount (user_account_id,first_name, last_name,email, phone_number, created)
+VALUES (7, 'keerthi', 'sheri',  'keerthi@gmail.com',  789890252,  '08/08/2023')
+
+INSERT INTO trips (trip_id, user_account_id,name, start_date, end_date, created) 
+VALUES (6, 6, 'boston', '2023-09-25', '2023-09-8', '2023-10-10 19:00:00');
+
+INSERT INTO trips (trip_id, user_account_id,name, start_date, end_date, created) 
+VALUES (7, 7, 'LA', '2023-112-19', '2023-12-29', '2023-06-23 10:00:00');
+
+INSERT INTO activities (destination_id,name,date,time, notes, created) 
+VALUES (6, 6,'04/23/2023', 'reserve a motel', '07/05/2023 20:15:00');
