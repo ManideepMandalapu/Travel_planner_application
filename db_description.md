@@ -6,20 +6,19 @@ This database mainly has 4 tables `useraccount`,`trips`,`Destination` and `Activ
 simple sqlite3 database. 
 
 useraccount table is used for storing the registered customers / users of this application and this table contains
-the first_name,last_name, email, phone_number and created as fields. user_account_id as primary key for this table.
+the first_name, last_name, email, phone_number and created as fields. user_account_id as primary key for this table.
 
-trips table is used for storing the planned trips information , registered users can plan their trips and we are 
-saving those information in this table, this table has foreign key to reference useraccount table and other fields like start_date,
-end_date, name is using for trips information.
+trips table is used for storing the planned trips information, registered users can plan their trips and we are 
+saving that information in this table, this table has a foreign key to reference useraccount table and other fields like start_date,
+end_date, name is used for trip information.
 
-Destination table stores the information about each individual trip, this table foreign key relationship with
-trips table and other fields for storing about the destinations.
+The destination table stores the information about each destination in a trip, this table has a foreign key relationship with the trips table, and other fields are used for storing information about the destinations.
 
-activities table stores the information about each activity that needs to be done in each destination and customer can note each 
-activity information using this table.
+activities table stores the information about each activity that needs to be done at each destination and customers can note each 
+activity's information using this table.
 
-Each table has unique identifier called primary key and we are using created field in each table for identifying
-when each record of table created. We added the foreign key for better data integrity.
+Each table has a unique identifier called the primary key and we are using created field in each table for identifying when each record of the table is created. We added the foreign key for better data integrity.
+
 
 
 
@@ -131,8 +130,15 @@ key of the table.
 
 useraccount:
 
-SELECT * 
-FROM useraccount
+SELECT 
+	user_account_id,
+	first_name,
+	last_name,
+	email,
+	phone_number,
+	created
+FROM
+	useraccount
 LIMIT 5
 
 
