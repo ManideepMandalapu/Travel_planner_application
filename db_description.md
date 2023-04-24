@@ -136,7 +136,7 @@ FROM useraccount
 LIMIT 5
 
 
-user_account_id       first_name        last_name  		   email   			    phone_number         created
+user_account_id       	      first_name             last_name  		   email   		     phone_number                created
 
 	1			abcd			xyz			abcd.xyz@gmail.com		99999999		01/04/2023
 	2			xyz			abcd			xyz.abcd@gmail.com		55512457		01/05/2023
@@ -153,12 +153,12 @@ LIMIT 5
 
 
 
-trip_id	user_account_id		name		start_date		end_date 		created
+trip_id		user_account_id		     name		start_date		end_date 		created
    
-   1			1		    Colorado	03/04/2023		05/04/2023		02/04/2023
-   2			2		    oklahoma	06/04/2023		07/04/2023		04/04/2023
+   1			1		    Colorado		03/04/2023		05/04/2023		02/04/2023
+   2			2		    oklahoma		06/04/2023		07/04/2023		04/04/2023
    3			3		    Texas		06/04/2023		07/04/2023		03/04/2023
-   4			4		    virgenia	05/04/2023		08/04/2023		04/04/2023
+   4			4		    virgenia		05/04/2023		08/04/2023		04/04/2023
    5			5		    Denver		06/04/2023		09/04/2023		01/04/2023
 
 
@@ -169,11 +169,11 @@ FROM destination
 LIMIT 5
 
 
-destination_id	trip_id		name				notes					created
+destination_id		trip_id		name				notes					created
 	
 	1		  3		Mountain treking		Reserve tickets online		03/04/2023 10:00:00
-	2		  5		Visit du university	schedule campus tour		01/04/2023 13:41:52
-	3		  4		Virginia beach		Book motel near by		04/04/2023 14:47:15
+	2		  5		Visit du university		schedule campus tour		01/04/2023 13:41:52
+	3		  4		Virginia beach			Book motel near by		04/04/2023 14:47:15
 	4		  1		Mountain trecking		spring visit			02/04/2023 15:15:10
 	5		  2		waterfalls visit		Book tickets for visit		04/04/2023 11:23:35	  
 
@@ -184,7 +184,7 @@ SELECT *
 FROM activities
 LIMIT 5
 
-activity_id		destination_id	  date			notes					created
+   activity_id		destination_id	  	date			notes					created
 
 	1			1		04/24/2023		Make Dinner reservations	23/04/2023 10:00:00
 	2			2		04/21/2023		order food on campus		24/04/2023 11:15:00
