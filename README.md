@@ -1,4 +1,4 @@
-# CS665-SQL-Database-Project1
+# CS665-SQL-Database-Project1 (Team number - 21)
 
 Database team project1 (Team size 3)
 
