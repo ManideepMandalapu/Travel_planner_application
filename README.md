@@ -1,13 +1,6 @@
-# CS665-SQL-Database-Project1 (Team number - 21)
+Travel planner application: This application is developed with HTML, CSS, Javascript, python and django programming languages and used SQLITE as the database for this project.
 
-Database team project1 (Team size 3)
-
-Team members                         GitHub Id's
-
-Manideep Mandalapu                  ManideepMandalapu
-Hrithik Jogu                        JHrithik
-Lohitha Pachava                     loh456
-
+Functionality of this application is explained in below video
 
 Youtube video link :
 https://youtu.be/NkWAxeyRC0w
